@@ -1,5 +1,7 @@
+const userController = require("../controller/user");
 module.exports = (app) => {
-  app.get("/api/user", (req, res) => {
-    res.json("it working");
-  });
+  app
+    .post("/api/user/create", userController.create)
+    .get("/api/users", userController.getAll)
+    .delete("/api/user/:id", userController.delete);
 };

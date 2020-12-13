@@ -14,6 +14,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+require("./database/connection");
 require("./routes")(app);
 
 const port = process.env.PORT || 3000;
