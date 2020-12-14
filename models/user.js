@@ -2,7 +2,7 @@
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
-    "users",
+    "user",
     {
       email: DataTypes.STRING,
       password: DataTypes.STRING,
@@ -12,5 +12,9 @@ module.exports = (sequelize, DataTypes) => {
       paranoid: true,
     }
   );
+
+  User.associate = (models) =>
+    User.hasOne(models.bill, { foreignKey: "idUser" });
+
   return User;
 };

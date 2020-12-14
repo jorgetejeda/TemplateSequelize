@@ -11,7 +11,7 @@ if (!process.argv[2] || !process.argv[3]) {
   function validateCmd(environment, dbAction) {
     const _environments = ["development", "test"];
     if (!_environments.includes(environment)) {
-      console.log("The environment you are trying to call doesnt exist");
+      console.log("The environment you are trying to call doesn't exist");
       return;
     }
   
